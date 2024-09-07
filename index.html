@@ -11,11 +11,38 @@
     <div class="container mx-auto mt-6 max-w-sm">
         <h1 class="text-5xl mb-5">Alpine.js Demo</h1>
 
-        <div x-data="{open: false}, name: 'Brad'">
-            <button x-on:click="open = !open" class="bg-slate-700 text-white px-4 py-2 rounded-xl">Toggle</button>
-            <div x-show="open">
+        <div x-data="{open: false, name: 'Edd', search: ''}">
+            <button  
+                x-on:click="open = !open; open ? name= 'Brad' : name= 'Edd'" 
+                x-bind:class="open ? 'bg-blue-800' : 'bg-slate-700'"
+              
+                class="bg-slate-700 text-white px-4 py-2 rounded-xl">Toggle</button>
+            <div x-show="open" x-transition>
                 <p class="bg-gray-200 p-4 my-6 rounded">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat corrupti similique praesentium asperiores soluta consequuntur iste ducimus vero eligendi molestias rem doloremque, eos ad animi.</p>
             </div>
+            <!-- x-text -->
+            <div class="my-4">
+                The value of name is <span x-text="name" class="font-bold"></span>
+            </div>
+            <!-- x-effect -->
+             <div x-effect="console.log(open)"></div>
+
+             <!-- x-model -->
+              
+              <input x-model="search" type="text" class="border p-2 w-full mb-2 mt-6" placeholder="Search for something...">
+
+              <p>
+                <span class="font-bold">Searching for: </span>
+                <span x-text="search"></span>
+            </p>
+
+            <!-- x-if -->
+             <template x-if="open">
+                <div class="bg-gray-50 p-2 mt-8">
+                    Template based on condition
+                </div>
+             </template>
+              
         </div>
     </div>
 </body>
