@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Alpine.js Crash Course</title>
+</head>
+<body>
+    <div class="container mx-auto mt-6 max-w-sm">
+        <h1 class="text-5xl mb-5">Alpine.js Demo</h1>
+
+        <div x-data="{open: false}, name: 'Brad'">
+            <button x-on:click="open = !open" class="bg-slate-700 text-white px-4 py-2 rounded-xl">Toggle</button>
+            <div x-show="open">
+                <p class="bg-gray-200 p-4 my-6 rounded">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat corrupti similique praesentium asperiores soluta consequuntur iste ducimus vero eligendi molestias rem doloremque, eos ad animi.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
