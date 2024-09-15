@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js" integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta name="charset" content="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preconnect" href="https://cdn.oaistatic.com"><meta name="robots" content="index, follow"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="apple-itunes-app" content="app-id=6448311069"><link rel="apple-touch-icon" sizes="180x180" href="https://cdn.oaistatic.com/assets/apple-touch-icon-mz9nytnj.webp"><link rel="icon" type="image/png" sizes="32x32" href="https://cdn.oaistatic.com/assets/favicon-32x32-nm6r4n04.webp"><link rel="icon" type="image/png" sizes="16x16" href="https://cdn.oaistatic.com/assets/favicon-16x16-k7wntvgz.webp"><title>ChatGPT</title><link rel="stylesheet" href="https://cdn.oaistatic.com/assets/root-i29bow3u.css"><link rel="stylesheet" href="https://cdn.oaistatic.com/assets/conversation-small-c8xg50op.css"><link rel="modulepreload" as="script" crossorigin="" href="https://cdn.oaistatic.com/assets/iouu4ut2qhq5g9tp.js"><link rel="modulepreload" as="script" crossorigin="" href="https://cdn.oaistatic.com/assets/iwjaknd9tz35cl8y.js"><link rel="modulepreload" as="script" crossorigin="" href="https://cdn.oaistatic.com/assets/hwsc264tzhu6xfsf.js"><link rel="modulepreload" as="script" crossorigin="" href="https://cdn.oaistatic.com/assets/iej0cupg2dqkmejt.js"><link rel="modulepreload" as="script" crossorigin="" href="https://cdn.oaistatic.com/assets/ept143argfuymv00.js"><link rel="modulepreload" as="script" crossorigin="" href="https://cdn.oaistatic.com/assets/jk8w36bsokizpx57.js"><link rel="modulepreload" as="script" crossorigin="" href="https://cdn.oaistatic.com/assets/kztj081h4s0ig3ca.js"><link rel="modulepreload" as="script" crossorigin="" href="https://cdn.oaistatic.com/assets/mp99r8mylhaftjyv.js"><link rel="modulepreload" as="script" crossorigin="" href="https://cdn.oaistatic.com/assets/ios6512bd9aoyg4m.js"><style>.r34K7X1zGgAi6DllVF3T{box-sizing:border-box;border:0;margin:0;padding:0;overflow:hidden;z-index:2147483647;pointer-events:none;visibility:hidden;opacity:0;transition:opacity 300ms linear;height:0;width:0;max-height:0;overflow:hidden;display:block}.r34K7X1zGgAi6DllVF3T.active{display:block;visibility:visible;max-height:none;overflow:visible}.r34K7X1zGgAi6DllVF3T.active.show{opacity:1;pointer-events:inherit;position:inherit}.r34K7X1zGgAi6DllVF3T.active.show.in-situ{width:inherit;height:inherit}.r34K7X1zGgAi6DllVF3T.active.show.lightbox{position:fixed;width:100% !important;height:100% !important;top:0;right:0;bottom:0;left:0}@-moz-document url-prefix(''){.r34K7X1zGgAi6DllVF3T{visibility:visible;display:block}}
+</style><style data-emotion="react-scroll-to-bottom--css-tksip" data-s=""></style><link rel="modulepreload" as="script" crossorigin="" href="https://cdn.oaistatic.com/assets/bj0hm2u1oq8t5kf1.js"><link rel="modulepreload" as="script" crossorigin="" href="https://cdn.oaistatic.com/assets/f3xwtom861x1a52k.js"><link rel="modulepreload" as="script" crossorigin="" href="https://cdn.oaistatic.com/assets/huxf48luekw2smi6.js"><link rel="modulepreload" as="script" crossorigin="" href="https://cdn.oaistatic.com/assets/cdtnyamclihowlnf.js"><link rel="modulepreload" as="script" crossorigin="" href="https://cdn.oaistatic.com/assets/ohtlfg2mrxtkqe71.js"><link rel="modulepreload" as="script" crossorigin="" href="https://cdn.oaistatic.com/assets/lztr1n0ul7ca219e.js"><link rel="modulepreload" as="script" crossorigin="" href="https://cdn.oaistatic.com/assets/kjsobf0opnrk0rwy.js"><link rel="modulepreload" as="script" crossorigin="" href="https://cdn.oaistatic.com/assets/f5af02hxzb6vqns8.js"><link rel="modulepreload" as="script" crossorigin="" href="https://cdn.oaistatic.com/assets/kqwdyvkaaavvn8k3.js"><link rel="modulepreload" as="script" crossorigin="" href="https://cdn.oaistatic.com/assets/dk61dhb72kcdlasz.js"><link rel="modulepreload" as="script" crossorigin="" href="https://cdn.oaistatic.com/assets/l1ekln9wxjapfmpf.js">
+<link rel="stylesheet" href="style.css">
+</head>
+<body  x-data="{page:'./menu/Block/Adminhtml/LandingPage.html'}">
+    <nav class="admin-nav">
+        <ul class="menu">
+            <li class="menu-item">
+                <a href="#">Admin Page (Home)</a>
+            </li>
+            <li class="menu-item has-children">
+                <a href="#">Block</a>
+                <ul class="submenu">
+                    <li class="menu-item has-children">
+                        <a href="#">Adminhtml</a>
+                        <ul class="submenu">
+                            <li class="menu-item"><a x-on:click="page = './menu/Block/Adminhtml/LandingPage.html'" >LandingPage.php</a></li>
+             
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu-item has-children">
+                <a href="#">Controller</a>
+                <ul class="submenu">
+                    <li class="menu-item has-children">
+                        <a href="#">Adminhtml</a>
+                        <ul class="submenu">
+                            <li class="menu-item"><a x-on:click="page = './menu/Controller/Adminhtml/Index.html'" >Index.php</a></li>
+                       
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="menu-item has-children">
+                <a href="#">etc</a>
+                <ul class="submenu">
+                     <li class="menu-item has-children">
+                        <a href="#">adminhtml</a>
+                        <ul class="submenu">
+                            <li class="menu-item"><a x-on:click="page = './menu/ect/adminhtml/routes.html'" >routes.xml</a></li>
+                            <li class="menu-item"><a x-on:click="page = './menu/ect/adminhtml/menu.html'" >menu.xml</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a x-on:click="page = './menu/ect/acl.html'" >acl.xml</a></li>
+                </ul>
+            </li>
+
+            <li class="menu-item has-children">
+                <a href="#">view</a>
+                <ul class="submenu">
+                    <li class="menu-item has-children">
+                        <a href="#">adminhtml</a>
+                        <ul class="submenu">
+                            <li class="menu-item has-children"><a href="#">layout</a> <ul class="submenu">  <li class="menu-item"><a href="#">ladiningpage_index_index.xml</a></li></ul></li>
+                            <li class="menu-item has-children"><a href="#">templates</a> <ul class="submenu">  <li class="menu-item"><a href="#">landingpage.phtml</a></li></ul></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+ 
+    <div x-html="(await axios.get(page)).data"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
