@@ -1,3 +1,6 @@
+html{
+    background-color: #242428;
+}
 body {
     font-family: Arial, sans-serif;
     display:grid;
